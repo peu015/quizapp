@@ -10,26 +10,31 @@
     --white: #fff;
     --bg-mobile: url(./assets/images/pattern-background-mobile-light.svg);
 }
+
 body{
     height: 100svh;
     background: var(--bg-mobile) var(--bg-color) ;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 header{
     padding: 16px 24px;
     display: flex;
     justify-content: flex-end;
 }
+
 .tema{
     padding: 8px;
     display: flex;
     align-items: center;
     gap: 8px;
 }
+
 .tema img{
     width: 16px;
 }
+
 .tema button{
     height: 20px;
     width: 32px;
@@ -38,9 +43,14 @@ header{
     border-radius: 999px;
     padding: 4px;
 }
+
 .tema button div{
     background: var(--white);
     width: 12px;
     height: 12px;
     border-radius: 999px;
+}
+
+main{
+    padding: 32px 24px;
 }
