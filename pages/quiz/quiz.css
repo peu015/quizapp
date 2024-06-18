@@ -133,10 +133,13 @@ main{
     border-radius: 999px;
 }
 
+
+
 .alternativa form{
     display: flex;
     flex-direction: column;
     gap: 12px;
+    margin-bottom: 12px;
 }
 
 .alternativa input{
@@ -148,6 +151,47 @@ main{
     background: var(--button-bg);
     padding: 12px;
     font-size: 18px;
+    font-weight: 500;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    color: var(--primary-text-color);
+}
+
+.alternativa div{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+}
+
+
+
+.alternativa div span{
+
+    width: 40px;
+    height: 40px;
+    background: var(--bg-color);
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--secundary-text-color);
+
+    flex-shrink: 0;
+}
+
+.alternativa button{
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    background: var(--purple);
+    color: var(--white);
+    width: 100%;
+
+    font-size: 18px;
+    font-weight: 500;
 }
 
 @media(min-width: 1100px){
