@@ -152,6 +152,7 @@ main{
 
     header{
         margin-block: 81px;
+        max-width: 1160px;
     }
 
     .tema{
