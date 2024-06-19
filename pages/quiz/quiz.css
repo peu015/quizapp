@@ -168,6 +168,24 @@ main{
     }
 }
 
+.alternativa label#correta{
+    outline: 3px solid var(--green);
+
+    & span{
+        background: var(--green);
+        color: var(--white);
+    }
+}
+
+.alternativa label#errada{
+    outline: 3px solid var(--red);
+
+    & span{
+        background: var(--red);
+        color: var(--white);
+    }
+}
+
 .alternativa div{
     display: flex;
     align-items: center;
@@ -205,6 +223,8 @@ main{
 }
 
 @media(min-width: 1100px){
+    
+
     
     .tema{
         gap: 16px;
