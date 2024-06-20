@@ -8,6 +8,7 @@ let pontos = 0
 let perguntas = 1
 let resposta = ""
 let idInputResposta = ""
+let respostaCorretaId = ""
 
 botaoTema.addEventListener("click", () => {
 
@@ -103,7 +104,7 @@ function montarPergunta(){
                 </label>
                 
             </form>
-            <button>Enviar</button>
+            <button>Responder</button>
         </section>
 
         <a href="../resultado/resultado.html">faDUFADS</a>
@@ -118,9 +119,20 @@ function guardarResposta(evento){
     resposta = evento.target.value
     idInputResposta = evento.target.id
 
+    const botaoEnviar = document.querySelector(".alternativa button")
+    botaoEnviar.addEventListener("click", validarResposta)
 }
 
- async function iniciar() {
+function validarResposta(){
+    if(resposta === quiz.questions[perguntas-1].answer){
+        document.querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "correta")
+        pontos++
+}else{
+    document.querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "errada")
+    document.querySelector(`label[for='${respostaCorretaId}']`).setAttribute("id", "correta")
+}
+}
+ async function iniciar() { 
     alterarAssunto()
     await buscarPerguntas()
     montarPergunta()
@@ -128,7 +140,11 @@ function guardarResposta(evento){
     const inputsResposta = document.querySelectorAll(".alternativa input")
     inputsResposta.forEach(input => {
         input.addEventListener("click", guardarResposta)
+
+        if(input.value === quiz.questions[perguntas-1].answer){
+            respostaCorretaId = input.id
+        }
     })
 }
 
- iniciar()
+iniciar()
