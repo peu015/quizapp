@@ -117,6 +117,7 @@ function alterarSinais(texto){
 function guardarResposta(evento){
     resposta = evento.target.value
     idInputResposta = evento.target.id
+
 }
 
  async function iniciar() {
