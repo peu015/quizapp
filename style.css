@@ -67,6 +67,7 @@ header{
     padding: 4px;
     display: flex;
     justify-content: start;
+    cursor: pointer;
 }
 
 .tema button div{
