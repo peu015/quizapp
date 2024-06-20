@@ -74,7 +74,7 @@ header{
 .assunto_icone.javascript{
     background: var(--bg-js);
 }
-.assunto_icone.acesessibilidade{
+.assunto_icone.acessibilidade{
     background: var(--bg-acessibilidade);
 }
 .assunto_icone img{
