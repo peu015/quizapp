@@ -106,8 +106,6 @@ function montarPergunta(){
             </form>
             <button>Responder</button>
         </section>
-
-        <a href="../resultado/resultado.html">faDUFADS</a>
 `
 }
 
