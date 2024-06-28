@@ -3,12 +3,15 @@ import { trocarTema, verificarTema } from "../../helpers/tema-helper.js"
 const body = document.querySelector("body")
 const botaoTema = document.querySelector(".tema button")
 const assunto = localStorage.getItem("assunto")
+const botaoJogarNovamente = document.querySelector("main button")
 
 botaoTema.addEventListener("click", () => {
 
     trocarTema(body, botaoTema)
 }
 )
+
+botaoJogarNovamente.addEventListener("click", jogarNovamente)
 
 verificarTema(body, botaoTema)
 
@@ -28,21 +31,22 @@ alterarAssunto()
 function inserirResultado() {
     const sectionPontuacao = document.querySelector(".pontuacao")
     const divAssunto = document.querySelector(".assunto")
-    console.log(divAssunto)
+    const pontos = localStorage.getItem("pontos")
 
-    sectionPontuacao.innerHTML`
-    <div class="assunto">
-        <div class="assunto_icone">
-            <img src="../../assets/images/icon-acessibilidade.svg" alt="ícone de acessibilidade">
-        </div>
+    sectionPontuacao.innerHTML = `
+    ${divAssunto.outerHTML}
 
-        <h1>Acessbilidade</h1>
-        </div>
-
-        <strong>8</strong>
+        <strong>${pontos}</strong>
 
         <p>de 10</p>
     `
 }
 
-inserirResultado
+inserirResultado()
+
+function jogarNovamente(){
+    localStorage.removeItem("pontos")
+    localStorage.removeItem("assunto")
+    
+    window.location.href = "../../index.html"
+}
