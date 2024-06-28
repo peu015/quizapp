@@ -2,6 +2,7 @@ import { trocarTema, verificarTema } from "../../helpers/tema-helper.js"
 
 const body = document.querySelector("body")
 const botaoTema = document.querySelector(".tema button")
+const assunto = localStorage.getItem("assunto")
 
 let quiz = {}
 let pontos = 0
@@ -18,7 +19,6 @@ botaoTema.addEventListener("click", () => {
 
 verificarTema(body, botaoTema)
 
-const assunto = localStorage.getItem("assunto")
 
 
 
@@ -56,7 +56,7 @@ function montarPergunta(){
     main.innerHTML = `
     <section class="pergunta">
             <div>
-                <p>Questão ${perguntas}</p>
+                <p>Questão ${perguntas} de 10</p>
 
                 <h2>${alterarSinais(quiz.questions[perguntas-1].question)}</h2>
             </div>

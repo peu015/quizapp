@@ -3,7 +3,6 @@ import { trocarTema, verificarTema } from "../../helpers/tema-helper.js"
 const body = document.querySelector("body")
 const botaoTema = document.querySelector(".tema button")
 const assunto = localStorage.getItem("assunto")
-const botaoJogar = document.querySelector("main button")
 
 botaoTema.addEventListener("click", () => {
 
@@ -11,11 +10,9 @@ botaoTema.addEventListener("click", () => {
 }
 )
 
-botaoJogar = addEventListener("click", jogarNovamente)
-
 verificarTema(body, botaoTema)
 
-function alterarAssunto(){
+function alterarAssunto() {
     const divIcone = document.querySelector(".assunto_icone ")
     const img = document.querySelector(".assunto_icone img")
     const titulo = document.querySelector(".assunto h1")
@@ -28,27 +25,24 @@ function alterarAssunto(){
 
 alterarAssunto()
 
-function inserirResultado(){
+function inserirResultado() {
     const sectionPontuacao = document.querySelector(".pontuacao")
     const divAssunto = document.querySelector(".assunto")
-    const pontos = localStorage.getItem("pontos")
+    console.log(divAssunto)
 
-    sectionPontuacao.innerHTML = `
-        ${divAssunto.outerHTML} 
-            <strong>${pontos}</strong>
+    sectionPontuacao.innerHTML`
+    <div class="assunto">
+        <div class="assunto_icone">
+            <img src="../../assets/images/icon-acessibilidade.svg" alt="ícone de acessibilidade">
+        </div>
 
-                <p>de 10</p>
-    
+        <h1>Acessbilidade</h1>
+        </div>
 
+        <strong>8</strong>
+
+        <p>de 10</p>
     `
 }
 
-function jogarNovamente(){
-    localStorage.removeItem("pontos")
-    localStorage.removeItem("assunto")
-
-    window.location.href="../../index.html"
-}
-
-inserirResultado()
-
+inserirResultado
